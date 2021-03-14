@@ -1,0 +1,10 @@
+# IDE files
+.idea
+
+# DLLs, binary and modules
+__pycache__/
+
+# data and databases
+
+# media files
+booktime/media
