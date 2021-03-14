@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python django_search/manage.py runserver 0.0.0.0:8000
+    environment:
+      - DJANGO_DEBUG
+      - SECRET_KEY
+      - DJANGO_ALLOWED_HOSTS
+      - DJANGO_DATABASE
+      - DJANGO_DATABASE_PASS
+    network_mode: "host"
