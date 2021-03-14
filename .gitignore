@@ -7,4 +7,4 @@ __pycache__/
 # data and databases
 
 # media files
-booktime/media
+django_search/media
