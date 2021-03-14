@@ -3,7 +3,7 @@ version: '3.7'
 services:
   web:
     build: .
-    command: python django_search/manage.py runserver 0.0.0.0:8000
+    command: uwsgi --http :8000 --chdir=django_search --module django_search.wsgi
     environment:
       - DJANGO_DEBUG
       - SECRET_KEY

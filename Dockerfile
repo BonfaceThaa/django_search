@@ -10,7 +10,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install pre-requisites
-RUN apk add postgresql-dev zlib-dev python3-dev gcc musl-dev
+RUN apk add postgresql-dev zlib-dev python3-dev gcc musl-dev build-base linux-headers pcre-dev
 # install dependencies
 RUN pip install --upgrade pip
 COPY django_search/requirements.txt .
