@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': os.environ.get("DJANGO_DATABASE"),
         'USER': 'postgres',
         'PASSWORD': os.environ.get("DJANGO_DATABASE_PASS"),
-        'HOST': 'localhost',
+        'HOST': '192.168.100.10',
         'PORT': '5432'
     }
 }
@@ -124,4 +124,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")

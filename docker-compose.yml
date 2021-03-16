@@ -4,10 +4,21 @@ services:
   web:
     build: .
     command: uwsgi --http :8000 --chdir=django_search --module django_search.wsgi
+    volumes:
+      - static_volume:/django_search/django_search/static
     environment:
       - DJANGO_DEBUG
       - SECRET_KEY
       - DJANGO_ALLOWED_HOSTS
       - DJANGO_DATABASE
       - DJANGO_DATABASE_PASS
-    network_mode: "host"
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/django_search/django_search/static
+    ports:
+      - 1337:80
+    depends_on:
+      - web
+volumes:
+  static_volume:

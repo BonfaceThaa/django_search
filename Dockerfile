@@ -4,6 +4,7 @@ FROM python:3.8.3-alpine
 # create
 # set work directory
 WORKDIR /django_search
+RUN mkdir /django_search/static
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
