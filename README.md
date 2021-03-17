@@ -70,7 +70,7 @@ Test the functionality by navigating to the link http://localhost:8000/search/, 
 
 The results of the search will be displayed as shown in the following screenshot: 
 
-![search results page](res/Search-results.png)
+![search results page](res/search-results.png)
 
 ## Serving the application using uwsgi
 The uWSGI application server is responsible for serving the django application in a versatile, low-resource consumption 
@@ -109,7 +109,12 @@ Navigate to  http://localhost:8000/search/ to access the search application.
 ## Serving the application with Nginx
 Create a folder called nginx in the root project folder and add a dockerfile and a docker-compose file for setting up a 
 reverse proxy server using Nginx. Update the docker-compose file by adding a service called nginx with `build` and `ports`
-configurations.
+configurations. After that, bring down the container and build the new containers as shown below:
+
+```code
+docker-compose down
+docker-compose up -d --build
+``` 
 
 ##Areas for improvement
 This guide illustrated how to setup a Django application, uwsgi and Nginx using Docker. A few things to for refinement 

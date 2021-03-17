@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': os.environ.get("DJANGO_DATABASE"),
         'USER': 'postgres',
         'PASSWORD': os.environ.get("DJANGO_DATABASE_PASS"),
-        'HOST': '192.168.100.10',
+        'HOST': os.environ.get("DJANGO_DATABASE_IP"),
         'PORT': '5432'
     }
 }

@@ -12,6 +12,7 @@ services:
       - DJANGO_ALLOWED_HOSTS
       - DJANGO_DATABASE
       - DJANGO_DATABASE_PASS
+      - DJANGO_DATABASE_IP
   nginx:
     build: ./nginx
     volumes:

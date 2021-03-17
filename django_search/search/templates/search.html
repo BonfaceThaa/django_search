@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block title %}Search{% endblock %}
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
 {% block content %}
 
 {% if query %}
-<h1>Articles containing "{{ query }}"</h1>
+<div class="container">
+<h2>Articles containing "{{ query }}"</h2>
 <h3>
 {% with results.count as total_results %}
 Found {{ total_results }} result{{ total_results|pluralize }}
@@ -23,16 +19,16 @@ Found {{ total_results }} result{{ total_results|pluralize }}
 {% endfor %}
 
 <p><a href='{% url "article_search" %}'>Search again</a></p>
+</div>
 {% else %}
-
-<h1>Search for articles</h1>
+<div class="container">
+<h2>Search for articles</h2>
 
 <form method="get">
 {{ form.as_p }}
-<input type="submit" value="Search">
+<input type="submit" class="btn btn-primary" value="Search">
 </form>
+</div>
 {% endif %}
 
 {% endblock %}
-</body>
-</html>
